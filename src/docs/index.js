@@ -25,12 +25,10 @@ export default {
   tags: [
     {
       name: 'User',
-      name: 'Enquente',
     },
   ],
   paths: {
     '/sessions': loginPath,
-    '/loadServer': loadServerPath,
   },
   schemas: {
     account: accountSchema,

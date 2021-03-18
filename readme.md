@@ -4,12 +4,12 @@
 ##### API para gerenciamento de filmes.
 
 API é responsavel por:
- 01 - Cadastrar, Editar e Excluir(desativar) usuário admin
- 02 - Cadastrar, Editar e Excluir(desativar) usuário normal
- 03 - Cadastrar e listar diretor de cinema
- 04 - Cadastrar e listar genero do filme
- 05 - Cadastrar filmes
- 06 - Curtir os filmes
+- [x] 01 - Cadastrar, Editar e Excluir(desativar) usuário admin
+- [x] 02 - Cadastrar, Editar e Excluir(desativar) usuário normal
+- [x] 03 - Cadastrar e listar diretor de cinema
+- [x] 04 - Cadastrar e listar genero do filme
+- [x] 05 - Cadastrar filmes
+- [x] 06 - Curtir os filmes
 
 Nesse projeto foi adotado o padrão de projeto **Model-View-Controlle**.
 
