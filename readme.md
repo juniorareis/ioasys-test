@@ -21,7 +21,6 @@ Para desenvolvimento do sistema foi utilizado a tecnologias:
 
 Bibliotecas utilizadas no projeto:
 
-
      "dependencies": {
     "babel-jest": "^26.6.3",
     "bcryptjs": "^2.4.3",
@@ -39,24 +38,6 @@ Bibliotecas utilizadas no projeto:
     "yup": "^0.32.9"
   },
 
-  "devDependencies": {
-    "@babel/preset-env": "^7.13.10",
-    "@sucrase/jest-plugin": "^2.0.0",
-    "@types/jest": "^26.0.20",
-    "@types/swagger-ui-express": "^4.1.2",
-    "eslint": "^7.21.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-prettier": "^3.3.1",
-    "express": "^4.17.1",
-    "jest": "^26.6.3",
-    "nodemon": "^2.0.7",
-    "prettier": "^2.2.1",
-    "sequelize-cli": "^6.2.0",
-    "sqlite3": "^5.0.2",
-    "sucrase": "^3.17.1"
-  }
 
 ### onfigurações e instalação
 
