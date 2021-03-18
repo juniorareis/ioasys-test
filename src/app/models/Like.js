@@ -1,0 +1,21 @@
+import Sequelize, { Model } from 'sequelize';
+
+class Like extends Model {
+  static init(sequelize) {
+    super.init(
+      {
+        film_id: Sequelize.INTEGER,
+        user_id: Sequelize.INTEGER,
+      },
+      { sequelize }
+    );
+    return this;
+  }
+
+  static associate(models) {
+    this.belongsTo(models.Film, { foreignKey: 'film_id', as: 'film' });
+    this.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' });
+  }
+}
+
+export default Like;
