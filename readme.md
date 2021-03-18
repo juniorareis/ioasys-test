@@ -21,8 +21,7 @@ Para desenvolvimento do sistema foi utilizado a tecnologias:
 
 Bibliotecas utilizadas no projeto:
 
-
-     "dependencies": {
+    ``` "dependencies": {
     "babel-jest": "^26.6.3",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -37,9 +36,9 @@ Bibliotecas utilizadas no projeto:
     "swagger-ui-express": "^4.1.6",
     "youch": "^2.1.1",
     "yup": "^0.32.9"
-  },
+  }, ```
 
-  "devDependencies": {
+ ``` "devDependencies": {
     "@babel/preset-env": "^7.13.10",
     "@sucrase/jest-plugin": "^2.0.0",
     "@types/jest": "^26.0.20",
@@ -56,7 +55,7 @@ Bibliotecas utilizadas no projeto:
     "sequelize-cli": "^6.2.0",
     "sqlite3": "^5.0.2",
     "sucrase": "^3.17.1"
-  }
+  } ```
 
 ### onfigurações e instalação
 
