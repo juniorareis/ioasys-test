@@ -25,7 +25,6 @@ const routes = new Router();
 
 //Docs Api
 routes.use('/api-docs', nocacheMiddleware, serve, setup(swaggerConfig));
-
 //Admin and Session
 routes.post('/admin', ValidatorUserStore, AdminController.store);
 routes.post('/sessions', ValidatorSessionStore, SessionController.store);

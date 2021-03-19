@@ -1,13 +1,16 @@
 export default {
   post: {
     tags: ['User'],
-    summary: 'API para autenticar usuário',
+    summary: 'API para criar usuário admin',
     requestBody: {
       content: {
         'application/json': {
           schema: {
             type: 'object',
             properties: {
+              name: {
+                type: 'string',
+              },
               email: {
                 type: 'string',
               },
@@ -25,7 +28,18 @@ export default {
         content: {
           'application/json': {
             schema: {
-              $ref: '#/schemas/account',
+              type: 'object',
+              properties: {
+                name: {
+                  type: 'string',
+                },
+                email: {
+                  type: 'string',
+                },
+                admin: {
+                  type: 'boolean',
+                },
+              },
             },
           },
         },

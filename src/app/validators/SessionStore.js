@@ -2,7 +2,6 @@ import * as Yup from 'yup';
 
 export default async (req, res, next) => {
   try {
-    console.log(req);
     const schema = Yup.object().shape({
       email: Yup.string().email().required(),
       password: Yup.string().required(),

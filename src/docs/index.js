@@ -1,4 +1,5 @@
 import loginPath from './paths/login-path';
+import createUserAdminPath from './paths/create-user-admin-path';
 import badRequest from './components/bad-request';
 import serverError from './components/server-error';
 import unauthorized from './components/unauthorized';
@@ -17,11 +18,11 @@ export default {
     description: 'API ioasys filmes',
     version: '1.0.0',
   },
-  servers: [
-    {
-      url: '/',
-    },
-  ],
+  host: 'localhost:3355',
+  basePath: '/',
+  schemes: ['http', 'https'],
+  consumes: ['application/json'],
+  produces: ['application/json'],
   tags: [
     {
       name: 'User',
@@ -29,6 +30,7 @@ export default {
   ],
   paths: {
     '/sessions': loginPath,
+    '/admin': createUserAdminPath,
   },
   schemas: {
     account: accountSchema,
