@@ -48,7 +48,7 @@ class UserController {
     }
 
     if (oldPassword && !(await user.checkPassword(oldPassword))) {
-      return res.status(401).json({ error: 'password dos not match' });
+      return res.status(401).json({ error: 'A senha não corresponde' });
     }
 
     const { id, name, admin } = await user.update(req.body);

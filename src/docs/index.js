@@ -1,5 +1,9 @@
 import loginPath from './paths/login-path';
 import createUserAdminPath from './paths/create-user-admin-path';
+import createUserPath from './paths/create-user-path';
+import userUpdatePath from './paths/user-update-path';
+import userCancelPath from './paths/user-cancel-path';
+
 import badRequest from './components/bad-request';
 import serverError from './components/server-error';
 import unauthorized from './components/unauthorized';
@@ -31,6 +35,9 @@ export default {
   paths: {
     '/sessions': loginPath,
     '/admin': createUserAdminPath,
+    '/users': createUserPath,
+    '/users': userUpdatePath,
+    '/users/cancel': userCancelPath,
   },
   schemas: {
     account: accountSchema,
@@ -40,7 +47,7 @@ export default {
   },
   components: {
     securitySchemes: {
-      apiKeyAuth: apiKeyAuthSchema,
+      bearerAuth: apiKeyAuthSchema,
     },
     badRequest,
     serverError,
