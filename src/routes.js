@@ -30,20 +30,24 @@ routes.post('/admin', ValidatorUserStore, AdminController.store);
 routes.post('/sessions', ValidatorSessionStore, SessionController.store);
 routes.use(authMiddleware);
 //User
-routes.post('/users', ValidatorUserStore, UserController.store);
-routes.put('/users', ValidatorUpdateStore, UserController.update);
+routes.post('/users/create', ValidatorUserStore, UserController.store);
+routes.put('/users/update', ValidatorUpdateStore, UserController.update);
 routes.put('/users/cancel', ValidatorUpdateStore, UserController.cancel);
 //Director
-routes.get('/directors', DirectorController.index);
-routes.post('/directors', ValidatorDirectorStore, DirectorController.store);
+routes.get('/directors/list', DirectorController.index);
+routes.post(
+  '/directors/create',
+  ValidatorDirectorStore,
+  DirectorController.store
+);
 //Genre
-routes.get('/genres', GenreController.index);
-routes.post('/genres', ValidatorGenreStore, GenreController.store);
+routes.get('/genres/list', GenreController.index);
+routes.post('/genres/create', ValidatorGenreStore, GenreController.store);
 //Film
-routes.get('/films', FilmController.index);
-routes.get('/films/:id', FilmController.show);
-routes.post('/films', FilmStore, FilmController.store);
+routes.get('/films/list', FilmController.index);
+routes.get('/films/show/:id', FilmController.show);
+routes.post('/films/create', FilmStore, FilmController.store);
 //Film
-routes.post('/likes', LikeStore, LikeController.store);
+routes.post('/likes/create', LikeStore, LikeController.store);
 
 export default routes;

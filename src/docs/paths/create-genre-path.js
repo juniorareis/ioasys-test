@@ -5,8 +5,8 @@ export default {
         bearerAuth: [],
       },
     ],
-    tags: ['User'],
-    summary: 'API para criar usuário',
+    tags: ['Genre'],
+    summary: 'API para criar gênero dos filmes',
     requestBody: {
       content: {
         'application/json': {
@@ -14,12 +14,6 @@ export default {
             type: 'object',
             properties: {
               name: {
-                type: 'string',
-              },
-              email: {
-                type: 'string',
-              },
-              password: {
                 type: 'string',
               },
             },
@@ -35,14 +29,11 @@ export default {
             schema: {
               type: 'object',
               properties: {
+                id: {
+                  type: 'integer',
+                },
                 name: {
                   type: 'string',
-                },
-                email: {
-                  type: 'string',
-                },
-                admin: {
-                  type: 'boolean',
                 },
               },
             },

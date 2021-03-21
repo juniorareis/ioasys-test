@@ -1,5 +1,10 @@
 ## API PROJETO FILMES
 
+#### DOCUMENTAÇÃO SWAGGER DA API
+
+```http://seu dominio:porta/api-docs```
+```Exemplo em dominio local: http://localhost:3355/api-docs```
+
 ### Sobre API
 ##### API para gerenciamento de filmes.
 

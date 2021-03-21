@@ -1,32 +1,22 @@
 export default {
-  post: {
+  get: {
     security: [
       {
         bearerAuth: [],
       },
     ],
-    tags: ['User'],
-    summary: 'API para criar usuário',
-    requestBody: {
-      content: {
-        'application/json': {
-          schema: {
-            type: 'object',
-            properties: {
-              name: {
-                type: 'string',
-              },
-              email: {
-                type: 'string',
-              },
-              password: {
-                type: 'string',
-              },
-            },
-          },
+    tags: ['Film'],
+    summary: 'API para mostrar um filme',
+    parameters: [
+      {
+        in: 'path',
+        name: 'id',
+        required: true,
+        schema: {
+          type: 'integer',
         },
       },
-    },
+    ],
     responses: {
       200: {
         description: 'Sucesso',
@@ -35,14 +25,29 @@ export default {
             schema: {
               type: 'object',
               properties: {
+                id: {
+                  type: 'integer',
+                },
                 name: {
                   type: 'string',
                 },
-                email: {
+                description: {
                   type: 'string',
                 },
-                admin: {
-                  type: 'boolean',
+                launch: {
+                  type: 'string',
+                },
+                age: {
+                  type: 'string',
+                },
+                diretor: {
+                  type: 'object',
+                },
+                genero: {
+                  type: 'object',
+                },
+                likes: {
+                  type: 'object',
                 },
               },
             },
