@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import expressBrute from 'express-brute';
 import { serve, setup } from 'swagger-ui-express';
 import UserController from './app/controllers/UserController';
 import SessionController from './app/controllers/SessionController';
@@ -21,18 +22,47 @@ import swaggerConfig from './docs';
 import authMiddleware from './app/middlewares/auth';
 import nocacheMiddleware from './app/middlewares/no-cache';
 
+const store = new expressBrute.MemoryStore();
+const bruteforce = new expressBrute(store);
+
 const routes = new Router();
 
 //Docs Api
 routes.use('/api-docs', nocacheMiddleware, serve, setup(swaggerConfig));
 //Admin and Session
-routes.post('/admin', ValidatorUserStore, AdminController.store);
-routes.post('/sessions', ValidatorSessionStore, SessionController.store);
+routes.post(
+  '/admin',
+  bruteforce.prevent,
+  ValidatorUserStore,
+  AdminController.store
+);
+routes.post(
+  '/sessions',
+  bruteforce.prevent,
+  ValidatorSessionStore,
+  SessionController.store
+);
+
 routes.use(authMiddleware);
 //User
-routes.post('/users/create', ValidatorUserStore, UserController.store);
-routes.put('/users/update', ValidatorUpdateStore, UserController.update);
-routes.put('/users/cancel', ValidatorUpdateStore, UserController.cancel);
+routes.post(
+  '/users/create',
+  bruteforce.prevent,
+  ValidatorUserStore,
+  UserController.store
+);
+routes.put(
+  '/users/update',
+  bruteforce.prevent,
+  ValidatorUpdateStore,
+  UserController.update
+);
+routes.put(
+  '/users/cancel',
+  bruteforce.prevent,
+  ValidatorUpdateStore,
+  UserController.cancel
+);
 //Director
 routes.get('/directors/list', DirectorController.index);
 routes.post(

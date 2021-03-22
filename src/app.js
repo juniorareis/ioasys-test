@@ -3,6 +3,7 @@ import express, { json } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import Youch from 'youch';
+import rateLimit from 'express-rate-limit';
 import 'express-async-errors';
 import routes from './routes';
 
@@ -20,6 +21,15 @@ class App {
     this.sever.use(helmet());
     this.sever.use(cors());
     this.sever.use(json());
+
+    if (process.env.NODE_ENV != 'development') {
+      const limiter = rateLimit({
+        windowMs: 15 * 60 * 1000, // 15 minutes
+        max: 100, // limit each IP to 100 requests per windowMs
+      });
+
+      this.sever.use(limiter);
+    }
   }
 
   routes() {
